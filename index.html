@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Hangman</title>
+</head>
+
+<body>
+    <h1>Hangman</h1>
+    <div class="container">
+        <div class="main">
+            <figure>
+                <img src="IMG/hangman0.png" alt="0 misstakes" class="hangman-img"></img>
+            </figure>
+            <div class="playing-field">
+                <div class="word">
+                    <p class="current-word hide"></p>
+                    <button class="start-btn">START!</button>
+                </div>
+                <div class="letters disabled">
+                    <button class="letter a">A</button>
+                    <button class="letter b">B</button>
+                    <button class="letter c">C</button>
+                    <button class="letter d">D</button>
+                    <button class="letter e">E</button>
+                    <button class="letter f">F</button>
+                    <button class="letter g">G</button>
+                    <button class="letter h">H</button>
+                    <button class="letter i">I</button>
+                    <button class="letter j">J</button>
+                    <button class="letter k">K</button>
+                    <button class="letter l">L</button>
+                    <button class="letter m">M</button>
+                    <button class="letter n">N</button>
+                    <button class="letter o">O</button>
+                    <button class="letter p">P</button>
+                    <button class="letter q">Q</button>
+                    <button class="letter r">R</button>
+                    <button class="letter s">S</button>
+                    <button class="letter t">T</button>
+                    <button class="letter u">U</button>
+                    <button class="letter v">V</button>
+                    <button class="letter w">W</button>
+                    <button class="letter x">X</button>
+                    <button class="letter y">Y</button>
+                    <button class="letter z">Z</button>
+                </div>
+            </div>
+        </div>
+        <div class="results hide">
+            <h2 class="results-message"></h2>
+            <button class="play-again" >Play Again</button>
+        </div>
+    </div>
+</body>
+
+</html>
