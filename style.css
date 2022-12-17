@@ -1,11 +1,43 @@
+@font-face {
+    font-family: 'Eraser';
+    src: url('fonts/EraserRegular.woff2') format('woff2'),
+        url('fonts/EraserRegular.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
+    font-family: 'Eraser';
+    color: white;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: medium;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-image: url(IMG/green-slate.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 h1 {
-    margin: 1rem 0;
+    padding: 1rem 0;
     text-align: center;
+    font-weight: normal;
+}
+
+h2 {
+    font-weight: normal;
 }
 
 .container {
@@ -64,9 +96,11 @@ figure {
 }
 
 .letter {
-    border-radius: 50%;
-    border: 2px solid navy;
-    background-color: skyblue;
+    /* border-radius: 50%;
+    border: 2px solid navy; */
+    border: none;
+    /* background-color: skyblue; */
+    background: none;
     color: white;
     display: flex;
     justify-content: center;
@@ -78,9 +112,9 @@ figure {
     /* pointer-events: none; */
 }
 
-.letter:hover {
+/* .letter:hover {
     background-color: rgb(0, 181, 252);
-}
+} */
 
 .disabled {
     pointer-events: none;
@@ -96,6 +130,24 @@ figure {
     pointer-events: none;
 }
 
+.correct {
+    background-image: url(IMG/circle.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+.incorrect {
+    background-image: url(IMG/x.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
 .hide {
     display: none;
+}
+
+@media (max-width: 520px) {
+    
 }

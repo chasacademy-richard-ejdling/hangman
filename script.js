@@ -26,7 +26,7 @@ function startGame() {
     randomWord = generateWord()
     console.log(randomWord)
     for (let i = 0; i < randomWord.length; i++) {
-        displayedWord.push('_')
+        displayedWord.push('-')
     }
     currentWord.innerHTML = displayedWord.join(' ')
     startBtn.classList.add('hide')
@@ -51,23 +51,23 @@ function letterGuess(btnLetter, eventBtn) {
     let index = randomWord.indexOf(btnLetter)
     if (index == -1) {
         console.log('No!!')
-        eventBtn.classList.add('wrong-guess')
+        eventBtn.classList.add('incorrect')
         incorrectGuesses++
         hangmanImg.setAttribute('src', `IMG/hangman${incorrectGuesses}.png`)
         if (incorrectGuesses == 11) {
-            result = 'You Lose!'
+            result = 'YOU LOSE!'
             endGame()
         }
     } else {
         console.log('Yes!')
-        eventBtn.classList.add('right-guess')
+        eventBtn.classList.add('correct')
         while (index != -1) {
             displayedWord[index] = btnLetter.toUpperCase()
             currentWord.innerHTML = displayedWord.join(' ')
             index = randomWord.indexOf(btnLetter, (index + 1))
         }
-        if (!displayedWord.includes('_')) {
-            result = 'You Win!'
+        if (!displayedWord.includes('-')) {
+            result = 'YOU WIN!'
             endGame()
         }
     }
@@ -78,10 +78,10 @@ function endGame() {
     main.style.opacity = '0.4'
     main.style.filter = 'blur(.9px)'
 
-    if (result === 'You Win!') {
+    if (result === 'YOU WIN!') {
         resultsMessage.innerHTML = result
     } else {
-        resultsMessage.innerHTML = `${result}<br>Correct word: ${randomWord.toUpperCase()}`
+        resultsMessage.innerHTML = `${result}<br>CORRECT WORD: ${randomWord.toUpperCase()}`
     }
     
     results.classList.remove('hide')
@@ -93,7 +93,7 @@ playAgain.addEventListener('click', () => {
     main.style.filter = ''
 
     guessBtns.forEach(button => {
-        button.classList.remove('right-guess', 'wrong-guess')
+        button.classList.remove('correct', 'incorrect')
     })
     
     result = ''
@@ -108,3 +108,5 @@ playAgain.addEventListener('click', () => {
 
 // add a random word generatir API (if there is such a thing). ex. https://random-word-api.herokuapp.com/word returns one random word
 // (https://random-word-api.herokuapp.com/all if you want to fetch all words. may take a long time to load though)
+
+// Mobilanpassa sidan!!
